@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">OverPrice PC</string>
+    <string name="app_name1">Создать заявку</string>
+    <string name="app_name2">Статистика</string>
+    <string name="app_name3">Заявки на ремонт</string>
+    <string name="app_name4">Телефон</string>
+    <string name="app_name5">Модель</string>
+    <string name="app_name6">Дата</string>
+    <string name="app_name7">Заявки на заказ</string>
+    <string name="app_name8">ФИО</string>
+    <string name="app_name9">телефон</string>
+    <string name="app_name10">Модель</string>
+    <string name="app_name11">Создание заявки покупка/ремонт</string>
+    <string name="app_name12">Услуга</string>
+    <string name="app_name13">Модель ПК</string>
+    <string name="app_name14">Описание проблемы</string>
+    <string name="app_name15">Выберите дату</string>
+    <string name="app_name16">Выберете время</string>
+    <string name="app_name17">Отправить заявку</string>
+
+    <string name="app_name18">Статистика</string>
+    <string name="app_name19">Общее кол-во заявок на ремонт: 3</string>
+    <string name="app_name20">Заявки на ремонт в работе: 2</string>
+    <string name="app_name21">Выполненых заявок на ремонт: 1</string>
+    <string name="app_name22">Общее кол-во заявок на покраску: 3</string>
+    <string name="app_nam23">Заявки на покупку в работе: 2</string>
+    <string name="app_name24">Выполненых заявок на покупку: 1</string>
+    <string name="app_name25">Лидия</string>
+    <string name="app_name26">Дата создания:</string>
+    <string name="app_name27">12.11.2024</string>
+    <string name="app_name28">18:22:</string>
+    <string name="app_name29">Дата выполнения:</string>
+    <string name="app_name31">15.11.2024</string>
+    <string name="app_name32">Время выполнения:</string>
+    <string name="app_name33">18:22</string>
+    <string name="app_name34">Выполнено</string>
+
+
+</resources>

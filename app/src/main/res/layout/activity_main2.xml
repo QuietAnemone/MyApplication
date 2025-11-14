@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B9B494"
+    tools:context=".MainActivity2">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Создание заявки покупка/ремонт"
+        android:textSize="30sp"
+        android:textColor="#393939"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="36dp"
+        android:gravity="center"/>
+
+    <EditText
+        android:id="@+id/editTextServiceType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_rectangle"
+        android:hint="Услуги"
+        android:gravity="center"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/textView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"/>
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_rectangle"
+        android:hint="ФИО"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@id/editTextServiceType"
+        app:layout_constraintStart_toStartOf="@id/editTextServiceType"
+        app:layout_constraintEnd_toEndOf="@id/editTextServiceType"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/editTextPCModel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_rectangle"
+        android:hint="Модель ПК"
+        android:gravity="center"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/editTextName"
+        app:layout_constraintStart_toStartOf="@id/editTextServiceType"
+        app:layout_constraintEnd_toEndOf="@id/editTextServiceType"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_rectangle"
+        android:hint="Номер телефона"
+        android:gravity="center"
+        android:inputType="phone"
+        app:layout_constraintTop_toBottomOf="@id/editTextPCModel"
+        app:layout_constraintStart_toStartOf="@id/editTextServiceType"
+        app:layout_constraintEnd_toEndOf="@id/editTextServiceType"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/editTextNote"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:background="@drawable/rounded_rectangle"
+        android:hint="Примечание к заказу"
+        android:gravity="center"
+        android:inputType="textMultiLine"
+        app:layout_constraintTop_toBottomOf="@id/editTextPhone"
+        app:layout_constraintStart_toStartOf="@id/editTextServiceType"
+        app:layout_constraintEnd_toEndOf="@id/editTextServiceType"
+        android:layout_marginTop="14dp"/>
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_rectangle"
+        android:hint="Выберите дату доставки"
+        android:gravity="center"
+        android:inputType="date"
+        app:layout_constraintTop_toBottomOf="@id/editTextNote"
+        app:layout_constraintStart_toStartOf="@id/editTextServiceType"
+        app:layout_constraintEnd_toEndOf="@id/editTextServiceType"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/editTextTime"
+        android:layout_width="227dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_rectangle"
+        android:gravity="center"
+        android:hint="Время доставки"
+        android:inputType="time"
+        app:layout_constraintEnd_toEndOf="@id/editTextServiceType"
+        app:layout_constraintStart_toStartOf="@id/editTextServiceType"
+        app:layout_constraintTop_toBottomOf="@id/editTextDate" />
+
+    <!-- Кнопка отправить -->
+
+    <!-- Кнопка Назад -->
+
+    <Button
+        android:id="@+id/buttonOpenStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:backgroundTint="#D0BB00"
+        android:text="Отправить заявку"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextTime" />
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="144dp"
+        android:layout_marginBottom="100dp"
+        android:background="@color/green"
+        android:textColor="#000000"
+        android:text="Назад"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
