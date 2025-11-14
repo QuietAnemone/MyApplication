@@ -37,109 +37,120 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"/>
 
+
     <EditText
         android:id="@+id/editTextName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:background="@drawable/rounded_rectangle"
-        android:hint="ФИО"
         android:gravity="center"
+        android:hint="ФИО"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="@id/editTextServiceType"
-        app:layout_constraintStart_toStartOf="@id/editTextServiceType"
         app:layout_constraintEnd_toEndOf="@id/editTextServiceType"
-        android:layout_marginTop="10dp"/>
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/editTextServiceType"
+        app:layout_constraintTop_toBottomOf="@id/editTextServiceType" />
 
     <EditText
         android:id="@+id/editTextPCModel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:background="@drawable/rounded_rectangle"
-        android:hint="Модель ПК"
         android:gravity="center"
+        android:hint="Модель ПК"
         android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/editTextName"
-        app:layout_constraintStart_toStartOf="@id/editTextServiceType"
         app:layout_constraintEnd_toEndOf="@id/editTextServiceType"
-        android:layout_marginTop="10dp"/>
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/editTextServiceType"
+        app:layout_constraintTop_toBottomOf="@id/editTextName" />
 
     <EditText
         android:id="@+id/editTextPhone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_rectangle"
-        android:hint="Номер телефона"
         android:gravity="center"
+        android:hint="Номер телефона"
         android:inputType="phone"
-        app:layout_constraintTop_toBottomOf="@id/editTextPCModel"
-        app:layout_constraintStart_toStartOf="@id/editTextServiceType"
+        android:maxLength="12"
         app:layout_constraintEnd_toEndOf="@id/editTextServiceType"
-        android:layout_marginTop="10dp"/>
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/editTextServiceType"
+        app:layout_constraintTop_toBottomOf="@id/editTextPCModel" />
+
 
     <EditText
         android:id="@+id/editTextNote"
-        android:layout_width="0dp"
-        android:layout_height="70dp"
+        android:layout_width="362dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/rounded_rectangle"
-        android:hint="Примечание к заказу"
         android:gravity="center"
+        android:hint="Примечание к заказу"
         android:inputType="textMultiLine"
-        app:layout_constraintTop_toBottomOf="@id/editTextPhone"
-        app:layout_constraintStart_toStartOf="@id/editTextServiceType"
         app:layout_constraintEnd_toEndOf="@id/editTextServiceType"
-        android:layout_marginTop="14dp"/>
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/editTextServiceType"
+        app:layout_constraintTop_toBottomOf="@id/editTextPhone" />
 
     <EditText
         android:id="@+id/editTextDate"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="365dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/rounded_rectangle"
-        android:hint="Выберите дату доставки"
         android:gravity="center"
+        android:hint="Выберите дату доставки"
         android:inputType="date"
-        app:layout_constraintTop_toBottomOf="@id/editTextNote"
-        app:layout_constraintStart_toStartOf="@id/editTextServiceType"
+        android:maxLength="10"
         app:layout_constraintEnd_toEndOf="@id/editTextServiceType"
-        android:layout_marginTop="10dp"/>
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/editTextServiceType"
+        app:layout_constraintTop_toBottomOf="@id/editTextNote" />
+
 
     <EditText
         android:id="@+id/editTextTime"
-        android:layout_width="227dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="362dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/rounded_rectangle"
         android:gravity="center"
         android:hint="Время доставки"
         android:inputType="time"
+        android:maxLength="5"
         app:layout_constraintEnd_toEndOf="@id/editTextServiceType"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="@id/editTextServiceType"
         app:layout_constraintTop_toBottomOf="@id/editTextDate" />
 
-    <!-- Кнопка отправить -->
-
-    <!-- Кнопка Назад -->
 
     <Button
         android:id="@+id/buttonOpenStats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="#D0BB00"
         android:text="Отправить заявку"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editTextTime" />
 
     <Button
         android:id="@+id/buttonBack"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="144dp"
-        android:layout_marginBottom="100dp"
-        android:background="@color/green"
-        android:textColor="#000000"
+        android:layout_width="164dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#D0BB00"
         android:text="Назад"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonOpenStats" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

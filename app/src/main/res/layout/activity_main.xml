@@ -11,22 +11,22 @@
     >
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="213dp"
+        android:layout_height="67dp"
         android:text="OverPrice PC"
-        android:textSize="24sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.53"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.125" />
+        app:layout_constraintVertical_bias="0.155" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="36dp"
         android:backgroundTint="#D0BB00"
         android:text="Создать заявку"
         android:textColor="#000000"
@@ -39,30 +39,14 @@
         android:id="@+id/button2"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="268dp"
         android:backgroundTint="#D0BB00"
         android:text="Статистика"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Заявки на ремонт"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="353dp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Заявки на заказ"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="538dp" />
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar"

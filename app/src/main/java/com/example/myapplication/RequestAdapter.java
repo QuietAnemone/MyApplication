@@ -62,9 +62,7 @@ public class RequestAdapter extends BaseAdapter {
         if ("В работе".equals(request.getStatus())) {
             buttonMarkDone.setVisibility(View.VISIBLE);
             buttonMarkDone.setOnClickListener(v -> {
-
                 dbHelper.updateRepairRequestStatus(request.getId(), "Готово", "");
-
                 request.setStatus("Готово");
                 notifyDataSetChanged();
             });
@@ -73,5 +71,10 @@ public class RequestAdapter extends BaseAdapter {
         }
 
         return convertView;
+    }
+
+    // Метод для обновления данных списка
+    public void updateRequests(List<Request> newRequests) {
+        this.requestList = newRequests;
     }
 }

@@ -9,26 +9,37 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.List;
 
 public class RequestsListActivity extends AppCompatActivity {
+    private ListView listViewRequests;
+    private RequestAdapter adapter;
+    private DatabaseHelper dbHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_requests_list);
 
-
-        ListView listViewRequests = findViewById(R.id.listViewRequests);
+        listViewRequests = findViewById(R.id.listViewRequests);
         Button buttonBack = findViewById(R.id.buttonBackRequests);
 
-
-        DatabaseHelper dbHelper = new DatabaseHelper(this);
+        dbHelper = new DatabaseHelper(this);
         List<Request> requests = dbHelper.getAllRepairRequests();
 
         // Подключаем кастомный адаптер (где реализована галочка)
-        RequestAdapter adapter = new RequestAdapter(this, requests, dbHelper);
+        adapter = new RequestAdapter(this, requests, dbHelper);
         listViewRequests.setAdapter(adapter);
 
         // Кнопка "Назад"
         if (buttonBack != null) {
             buttonBack.setOnClickListener(v -> finish());
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Обновляем список заявок при возврате на этот экран
+        List<Request> requests = dbHelper.getAllRepairRequests();
+        adapter.updateRequests(requests);
+        adapter.notifyDataSetChanged();
     }
 }
