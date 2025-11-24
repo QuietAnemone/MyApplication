@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 package com.example.myapplication;
-=======
-package com.example.myapplication; // замени на своё имя пакета
->>>>>>> daec64f8c7e765329b522865633226af1c04c126
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -11,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import java.util.List;
 import java.util.ArrayList;
-<<<<<<< HEAD
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -21,24 +16,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TABLE_REPAIR_REQUESTS = "repair_requests";
     private static final String TABLE_PURCHASE_REQUESTS = "purchase_requests";
 
-=======
-import java.util.ArrayList;
-import java.util.List;
-
-public class DatabaseHelper extends SQLiteOpenHelper {
-
-    // Название базы данных и версия
-    private static final String DATABASE_NAME = "overprice_pc.db";
-    private static final int DATABASE_VERSION = 1;
-
-    // Таблица для заявок на ремонт
-    private static final String TABLE_REPAIR_REQUESTS = "repair_requests";
-
-    // Таблица для заявок на покупку
-    private static final String TABLE_PURCHASE_REQUESTS = "purchase_requests";
-
-    // Колонки таблиц
->>>>>>> daec64f8c7e765329b522865633226af1c04c126
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_OWNER_NAME = "ownerName";
     private static final String COLUMN_PHONE_NUMBER = "phoneNumber";
@@ -56,10 +33,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-<<<<<<< HEAD
-=======
-        // Создание таблицы для заявок на ремонт
->>>>>>> daec64f8c7e765329b522865633226af1c04c126
         String CREATE_REPAIR_TABLE = "CREATE TABLE " + TABLE_REPAIR_REQUESTS + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + COLUMN_OWNER_NAME + " TEXT,"
@@ -74,10 +47,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + ")";
         db.execSQL(CREATE_REPAIR_TABLE);
 
-<<<<<<< HEAD
-=======
-        // Создание таблицы для заявок на покупку
->>>>>>> daec64f8c7e765329b522865633226af1c04c126
         String CREATE_PURCHASE_TABLE = "CREATE TABLE " + TABLE_PURCHASE_REQUESTS + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + COLUMN_OWNER_NAME + " TEXT,"
@@ -99,13 +68,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-<<<<<<< HEAD
-    // --- МЕТОДЫ ДЛЯ ЗАЯВОК НА РЕМОНТ ---
-=======
-    // === МЕТОДЫ ДЛЯ ЗАЯВОК НА РЕМОНТ ===
->>>>>>> daec64f8c7e765329b522865633226af1c04c126
+    // ---- Ремонт ----
 
-    // Добавление заявки на ремонт
     public long addRepairRequest(Request request) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -125,11 +89,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return id;
     }
 
-    // Получение всех заявок на ремонт
     public List<Request> getAllRepairRequests() {
         List<Request> requestList = new ArrayList<>();
         String selectQuery = "SELECT * FROM " + TABLE_REPAIR_REQUESTS + " ORDER BY " + COLUMN_ID + " DESC";
-
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
@@ -146,7 +108,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 request.setTime(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_TIME)));
                 request.setStatus(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_STATUS)));
                 request.setCompletionDate(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_COMPLETION_DATE)));
-
                 requestList.add(request);
             } while (cursor.moveToNext());
         }
@@ -155,15 +116,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return requestList;
     }
 
-    // Получение заявок на ремонт по статусу
     public List<Request> getRepairRequestsByStatus(String status) {
         List<Request> requestList = new ArrayList<>();
         String selectQuery = "SELECT * FROM " + TABLE_REPAIR_REQUESTS +
                 " WHERE " + COLUMN_STATUS + " = ?";
-
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, new String[]{status});
-
         if (cursor.moveToFirst()) {
             do {
                 Request request = new Request();
@@ -177,7 +135,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 request.setTime(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_TIME)));
                 request.setStatus(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_STATUS)));
                 request.setCompletionDate(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_COMPLETION_DATE)));
-
                 requestList.add(request);
             } while (cursor.moveToNext());
         }
@@ -186,14 +143,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return requestList;
     }
 
-    // Обновление статуса заявки на ремонт
     public int updateRepairRequestStatus(int id, String status, String completionDate) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-
         values.put(COLUMN_STATUS, status);
         values.put(COLUMN_COMPLETION_DATE, completionDate);
-
         int result = db.update(TABLE_REPAIR_REQUESTS, values,
                 COLUMN_ID + " = ?",
                 new String[]{String.valueOf(id)});
@@ -201,13 +155,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result;
     }
 
-<<<<<<< HEAD
-    // Обновление всех данных заявки на ремонт
-    public int updateRepairRequest(int id, String ownerName, String phoneNumber,
-                                   String pcModel, String serviceType, String note, String date, String time, String status) {
+    public int updateRepairRequest(int id, String ownerName, String phoneNumber, String pcModel,
+                                   String serviceType, String note, String date, String time, String status) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-
         values.put(COLUMN_OWNER_NAME, ownerName);
         values.put(COLUMN_PHONE_NUMBER, phoneNumber);
         values.put(COLUMN_PC_MODEL, pcModel);
@@ -216,7 +167,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_DATE, date);
         values.put(COLUMN_TIME, time);
         values.put(COLUMN_STATUS, status);
-
         int result = db.update(TABLE_REPAIR_REQUESTS, values,
                 COLUMN_ID + " = ?",
                 new String[]{String.valueOf(id)});
@@ -224,10 +174,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result;
     }
 
-    // Удаление одной заявки на ремонт
-=======
-    // Удаление заявки на ремонт
->>>>>>> daec64f8c7e765329b522865633226af1c04c126
     public void deleteRepairRequest(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_REPAIR_REQUESTS, COLUMN_ID + " = ?",
@@ -235,23 +181,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-<<<<<<< HEAD
-    // Очистка всей таблицы заявок на ремонт (БЫСТРЫЙ СБРОС)
     public void clearAllRepairRequests() {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_REPAIR_REQUESTS, null, null);
         db.close();
     }
 
-=======
->>>>>>> daec64f8c7e765329b522865633226af1c04c126
-    // Подсчёт заявок на ремонт по статусу
     public int countRepairRequestsByStatus(String status) {
         String countQuery = "SELECT COUNT(*) FROM " + TABLE_REPAIR_REQUESTS +
                 " WHERE " + COLUMN_STATUS + " = ?";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, new String[]{status});
-
         int count = 0;
         if (cursor.moveToFirst()) {
             count = cursor.getInt(0);
@@ -261,12 +201,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-    // Общее количество заявок на ремонт
     public int getTotalRepairRequests() {
         String countQuery = "SELECT COUNT(*) FROM " + TABLE_REPAIR_REQUESTS;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, null);
-
         int count = 0;
         if (cursor.moveToFirst()) {
             count = cursor.getInt(0);
@@ -276,18 +214,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-<<<<<<< HEAD
-    // --- МЕТОДЫ ДЛЯ ЗАЯВОК НА ПОКУПКУ ---
+    // ---- Покупка ----
 
-=======
-    // === МЕТОДЫ ДЛЯ ЗАЯВОК НА ПОКУПКУ ===
-
-    // Добавление заявки на покупку
->>>>>>> daec64f8c7e765329b522865633226af1c04c126
     public long addPurchaseRequest(Request request) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-
         values.put(COLUMN_OWNER_NAME, request.getOwnerName());
         values.put(COLUMN_PHONE_NUMBER, request.getPhoneNumber());
         values.put(COLUMN_SERVICE_TYPE, request.getServiceType());
@@ -296,20 +227,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_TIME, request.getTime());
         values.put(COLUMN_STATUS, request.getStatus());
         values.put(COLUMN_COMPLETION_DATE, request.getCompletionDate());
-
         long id = db.insert(TABLE_PURCHASE_REQUESTS, null, values);
         db.close();
         return id;
     }
 
-<<<<<<< HEAD
-=======
-    // Получение всех заявок на покупку
->>>>>>> daec64f8c7e765329b522865633226af1c04c126
     public List<Request> getAllPurchaseRequests() {
         List<Request> requestList = new ArrayList<>();
         String selectQuery = "SELECT * FROM " + TABLE_PURCHASE_REQUESTS + " ORDER BY " + COLUMN_ID + " DESC";
-
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
@@ -325,7 +250,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 request.setTime(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_TIME)));
                 request.setStatus(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_STATUS)));
                 request.setCompletionDate(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_COMPLETION_DATE)));
-
                 requestList.add(request);
             } while (cursor.moveToNext());
         }
@@ -334,16 +258,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return requestList;
     }
 
-<<<<<<< HEAD
-=======
-    // Подсчёт заявок на покупку по статусу
->>>>>>> daec64f8c7e765329b522865633226af1c04c126
     public int countPurchaseRequestsByStatus(String status) {
         String countQuery = "SELECT COUNT(*) FROM " + TABLE_PURCHASE_REQUESTS +
                 " WHERE " + COLUMN_STATUS + " = ?";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, new String[]{status});
-
         int count = 0;
         if (cursor.moveToFirst()) {
             count = cursor.getInt(0);
@@ -353,15 +272,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-<<<<<<< HEAD
-=======
-    // Общее количество заявок на покупку
->>>>>>> daec64f8c7e765329b522865633226af1c04c126
     public int getTotalPurchaseRequests() {
         String countQuery = "SELECT COUNT(*) FROM " + TABLE_PURCHASE_REQUESTS;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(countQuery, null);
-
         int count = 0;
         if (cursor.moveToFirst()) {
             count = cursor.getInt(0);
@@ -371,10 +285,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-<<<<<<< HEAD
-=======
-    // Удаление заявки на покупку
->>>>>>> daec64f8c7e765329b522865633226af1c04c126
     public void deletePurchaseRequest(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_PURCHASE_REQUESTS, COLUMN_ID + " = ?",
@@ -382,31 +292,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-<<<<<<< HEAD
     public void clearAllPurchaseRequests() {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_PURCHASE_REQUESTS, null, null);
         db.close();
     }
 
-=======
-    // Обновление статуса заявки на покупку
->>>>>>> daec64f8c7e765329b522865633226af1c04c126
     public int updatePurchaseRequestStatus(int id, String status, String completionDate) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-
         values.put(COLUMN_STATUS, status);
         values.put(COLUMN_COMPLETION_DATE, completionDate);
-
         int result = db.update(TABLE_PURCHASE_REQUESTS, values,
                 COLUMN_ID + " = ?",
                 new String[]{String.valueOf(id)});
         db.close();
         return result;
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> daec64f8c7e765329b522865633226af1c04c126
