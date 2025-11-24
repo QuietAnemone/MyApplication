@@ -6,7 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+<<<<<<< HEAD
 import android.widget.EditText;
+=======
+>>>>>>> daec64f8c7e765329b522865633226af1c04c126
 import android.widget.TextView;
 import java.util.List;
 
@@ -43,6 +46,7 @@ public class RequestAdapter extends BaseAdapter {
         }
 
         Request request = requestList.get(position);
+<<<<<<< HEAD
 
         EditText editOwnerName = convertView.findViewById(R.id.editOwnerName);
         EditText editPhoneNumber = convertView.findViewById(R.id.editPhoneNumber);
@@ -96,11 +100,33 @@ public class RequestAdapter extends BaseAdapter {
             buttonMarkDone.setVisibility(View.VISIBLE);
             buttonDelete.setVisibility(View.VISIBLE);
 
+=======
+        TextView textInfo = convertView.findViewById(R.id.textInfo);
+        Button buttonMarkDone = convertView.findViewById(R.id.buttonMarkDone);
+
+        String info = String.format(
+                "ФИО: %s\nТелефон: %s\nПК: %s\nУслуга: %s\nПримечание: %s\nДата: %s\nВремя: %s\nСтатус: %s",
+                request.getOwnerName(),
+                request.getPhoneNumber(),
+                request.getPcModel(),
+                request.getServiceType(),
+                request.getNote(),
+                request.getDate(),
+                request.getTime(),
+                request.getStatus()
+        );
+        textInfo.setText(info);
+
+        // Показываем галочку только для статуса "В работе"
+        if ("В работе".equals(request.getStatus())) {
+            buttonMarkDone.setVisibility(View.VISIBLE);
+>>>>>>> daec64f8c7e765329b522865633226af1c04c126
             buttonMarkDone.setOnClickListener(v -> {
                 dbHelper.updateRepairRequestStatus(request.getId(), "Готово", "");
                 request.setStatus("Готово");
                 notifyDataSetChanged();
             });
+<<<<<<< HEAD
 
             buttonDelete.setOnClickListener(v -> {
                 dbHelper.deleteRepairRequest(request.getId());
@@ -110,11 +136,19 @@ public class RequestAdapter extends BaseAdapter {
         } else {
             buttonMarkDone.setVisibility(View.GONE);
             buttonDelete.setVisibility(View.GONE);
+=======
+        } else {
+            buttonMarkDone.setVisibility(View.GONE);
+>>>>>>> daec64f8c7e765329b522865633226af1c04c126
         }
 
         return convertView;
     }
 
+<<<<<<< HEAD
+=======
+    // Метод для обновления данных списка
+>>>>>>> daec64f8c7e765329b522865633226af1c04c126
     public void updateRequests(List<Request> newRequests) {
         this.requestList = newRequests;
     }

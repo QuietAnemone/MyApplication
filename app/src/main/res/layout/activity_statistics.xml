@@ -53,7 +53,10 @@
         android:backgroundTint="#D0BB00"
         android:layout_marginBottom="16dp"/>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> daec64f8c7e765329b522865633226af1c04c126
     <Button
         android:id="@+id/buttonBack"
         android:layout_width="163dp"
@@ -62,6 +65,7 @@
         android:text="Назад"
         android:textColor="#000000" />
 
+<<<<<<< HEAD
     <Button
         android:id="@+id/buttonDeleteRequests"
         android:layout_width="wrap_content"
@@ -70,4 +74,6 @@
         android:backgroundTint="#D0BB00"
         android:text="Сброс статистики"
         android:textColor="#000000" />
+=======
+>>>>>>> daec64f8c7e765329b522865633226af1c04c126
 </LinearLayout>

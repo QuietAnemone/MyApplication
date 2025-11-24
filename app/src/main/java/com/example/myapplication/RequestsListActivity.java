@@ -24,9 +24,17 @@ public class RequestsListActivity extends AppCompatActivity {
         dbHelper = new DatabaseHelper(this);
         List<Request> requests = dbHelper.getAllRepairRequests();
 
+<<<<<<< HEAD
         adapter = new RequestAdapter(this, requests, dbHelper);
         listViewRequests.setAdapter(adapter);
 
+=======
+        // Подключаем кастомный адаптер (где реализована галочка)
+        adapter = new RequestAdapter(this, requests, dbHelper);
+        listViewRequests.setAdapter(adapter);
+
+        // Кнопка "Назад"
+>>>>>>> daec64f8c7e765329b522865633226af1c04c126
         if (buttonBack != null) {
             buttonBack.setOnClickListener(v -> finish());
         }
@@ -35,6 +43,10 @@ public class RequestsListActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+<<<<<<< HEAD
+=======
+        // Обновляем список заявок при возврате на этот экран
+>>>>>>> daec64f8c7e765329b522865633226af1c04c126
         List<Request> requests = dbHelper.getAllRepairRequests();
         adapter.updateRequests(requests);
         adapter.notifyDataSetChanged();

@@ -43,6 +43,7 @@ public class StatisticsActivity extends AppCompatActivity {
         if (buttonBack != null) {
             buttonBack.setOnClickListener(v -> finish());
         }
+<<<<<<< HEAD
 
         // Кнопка "Сброс статистики"
         Button buttonDeleteRequests = findViewById(R.id.buttonDeleteRequests);
@@ -55,5 +56,7 @@ public class StatisticsActivity extends AppCompatActivity {
 
             Toast.makeText(this, "Статистика и заявки сброшены!", Toast.LENGTH_SHORT).show();
         });
+=======
+>>>>>>> daec64f8c7e765329b522865633226af1c04c126
     }
 }

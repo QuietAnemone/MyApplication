@@ -4,6 +4,7 @@
     android:orientation="vertical"
     android:padding="14dp">
 
+<<<<<<< HEAD
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -128,4 +129,23 @@
             android:textColor="#fff"
             android:visibility="gone"/>
     </LinearLayout>
+=======
+    <TextView
+        android:id="@+id/textInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Инфо"
+        android:textSize="16sp"
+        android:textColor="#232323"/>
+
+    <Button
+        android:id="@+id/buttonMarkDone"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="✓"
+        android:backgroundTint="#7cb518"
+        android:textColor="#fff"
+        android:layout_gravity="right"
+        android:visibility="gone"/>
+>>>>>>> daec64f8c7e765329b522865633226af1c04c126
 </LinearLayout>
